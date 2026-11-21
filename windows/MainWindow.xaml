@@ -690,7 +690,7 @@
 
     <!-- BlackWolf signature: geometric wolf mark + tracked wordmark, quiet until hovered -->
     <StackPanel x:Name="Signature" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,0"
-                Background="Transparent" Opacity="0.55" ToolTip="Made by BlackWolf">
+                Background="Transparent" Opacity="0.55" ToolTip="BlackWolf&#x2122;">
       <StackPanel.Style>
         <Style TargetType="StackPanel">
           <Style.Triggers>
@@ -714,7 +714,7 @@
       <Path Width="12" Height="12" Stretch="Uniform" VerticalAlignment="Center" Margin="0,0,8,1"
             Fill="{StaticResource bAccent}"
             Data="F0 M0,0 L4.2,3.6 L7.8,3.6 L12,0 L11.2,7.2 L6,12 L0.8,7.2 Z M3.2,5.6 L5.2,6.6 L3.6,7.2 Z M8.8,5.6 L6.8,6.6 L8.4,7.2 Z"/>
-      <TextBlock Text="B&#x200A;l&#x200A;a&#x200A;c&#x200A;k&#x200A;W&#x200A;o&#x200A;l&#x200A;f&#x2122;" FontFamily="{StaticResource Display}"
+      <TextBlock Text="B&#x200A;l&#x200A;a&#x200A;c&#x200A;k&#x200A;W&#x200A;o&#x200A;l&#x200A;f" FontFamily="{StaticResource Display}"
                  FontSize="11" FontWeight="SemiBold" Foreground="{StaticResource bText2}" VerticalAlignment="Center"/>
       <Border Width="34" Height="1" Background="{StaticResource bText3}" VerticalAlignment="Center" Margin="10,0,0,0" Opacity="0.6"/>
     </StackPanel>

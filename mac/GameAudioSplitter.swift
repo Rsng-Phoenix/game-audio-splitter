@@ -1411,7 +1411,7 @@ struct Signature: View {
             WolfMark()
                 .fill(Color.accentColor, style: FillStyle(eoFill: true))
                 .frame(width: 11, height: 11)
-            Text("BlackWolf\u{2122}")
+            Text("BlackWolf")
                 .font(.system(size: 11, weight: .semibold))
                 .tracking(1)
                 .foregroundStyle(.secondary)
@@ -1420,7 +1420,7 @@ struct Signature: View {
         .opacity(hover.on ? 1 : 0.55)
         .animation(.easeOut(duration: 0.2), value: hover.on)
         .onHover { hover.on = $0 }
-        .help("Made by BlackWolf")
+        .help("BlackWolf\u{2122}")
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Made by BlackWolf")
     }
