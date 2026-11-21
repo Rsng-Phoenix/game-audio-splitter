@@ -1395,9 +1395,15 @@ struct WolfMark: Shape {
     }
 }
 
+/// Hover flag for Signature. A plain ObservableObject, not @State: in newer SDKs (seen with the
+/// macOS 27 SDK) @State is a macro whose plugin is not in the Command Line Tools, so it won't build.
+final class HoverState: ObservableObject {
+    @Published var on = false
+}
+
 /// BlackWolf signature under the Start button: quiet until hovered.
 struct Signature: View {
-    @State private var hover = false
+    @StateObject private var hover = HoverState()
 
     var body: some View {
         HStack(spacing: 8) {
@@ -1411,9 +1417,9 @@ struct Signature: View {
                 .foregroundStyle(.secondary)
             Rectangle().fill(.tertiary).frame(width: 34, height: 1)
         }
-        .opacity(hover ? 1 : 0.55)
-        .animation(.easeOut(duration: 0.2), value: hover)
-        .onHover { hover = $0 }
+        .opacity(hover.on ? 1 : 0.55)
+        .animation(.easeOut(duration: 0.2), value: hover.on)
+        .onHover { hover.on = $0 }
         .help("Made by BlackWolf")
         .accessibilityElement(children: .ignore)
         .accessibilityLabel("Made by BlackWolf")
