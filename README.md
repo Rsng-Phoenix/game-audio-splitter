@@ -53,6 +53,24 @@ Performance is the main design goal. Measured on the release builds:
 
 ## Installation
 
+### Download
+
+Get the latest build from **[Releases](https://github.com/Rsng-Phoenix/game-audio-splitter/releases/latest)**:
+
+| Platform | File |
+|---|---|
+| Windows 10 / 11 | `GameAudioSplitter-Windows.zip`: unzip and run `GameAudioSplitter.exe` |
+| macOS 14.4+ | `GameAudioSplitter-macOS.zip`: unzip and move the app to Applications |
+
+### macOS (Homebrew)
+
+```bash
+brew install --cask rsng-phoenix/tap/game-audio-splitter
+```
+
+Update with `brew upgrade --cask game-audio-splitter`. The app is not notarized: if macOS blocks the
+first launch, open *System Settings → Privacy & Security* and click **Open Anyway**.
+
 ### Windows (command line)
 
 Requirements: Windows 10 (2004+) or Windows 11, 64-bit. Nothing else: the C# compiler and WPF ship with Windows.
