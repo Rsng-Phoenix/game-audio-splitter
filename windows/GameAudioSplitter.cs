@@ -2022,6 +2022,15 @@ namespace GameAudioSplitter
                 w.Width = double.Parse(p[1], CultureInfo.InvariantCulture);
                 w.Height = double.Parse(p[2], CultureInfo.InvariantCulture);
             }
+            if (screenshotPath != null)
+            {
+                // Headless: render far off-screen, never take focus, no taskbar button,
+                // so a layout check can never interrupt whatever is on screen (e.g. a game).
+                w.WindowStartupLocation = WindowStartupLocation.Manual;
+                w.Left = -32000; w.Top = -32000;
+                w.ShowActivated = false;
+                w.ShowInTaskbar = false;
+            }
             WindowChrome.SetWindowChrome(w, new WindowChrome
             {
                 CaptionHeight = 40,
