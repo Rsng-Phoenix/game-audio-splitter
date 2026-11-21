@@ -672,7 +672,8 @@
     </ScrollViewer>
 
     <!-- footer -->
-    <Grid Grid.Row="2" Margin="20,10,20,20">
+    <StackPanel Grid.Row="2" Margin="20,10,20,14">
+    <Grid>
       <Button x:Name="StartButton" Style="{StaticResource Primary}" Visibility="{Binding NotRunning, Converter={StaticResource BoolVis}}">
         <StackPanel Orientation="Horizontal">
           <TextBlock Text="&#xE768;" FontFamily="{StaticResource Icons}" FontSize="13" VerticalAlignment="Center" Margin="0,1,10,0"/>
@@ -686,5 +687,37 @@
         </StackPanel>
       </Button>
     </Grid>
+
+    <!-- BlackWolf signature: geometric wolf mark + tracked wordmark, quiet until hovered -->
+    <StackPanel x:Name="Signature" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,0"
+                Background="Transparent" Opacity="0.55" ToolTip="Made by BlackWolf">
+      <StackPanel.Style>
+        <Style TargetType="StackPanel">
+          <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+              <Trigger.EnterActions>
+                <BeginStoryboard><Storyboard>
+                  <DoubleAnimation Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.2"/>
+                </Storyboard></BeginStoryboard>
+              </Trigger.EnterActions>
+              <Trigger.ExitActions>
+                <BeginStoryboard><Storyboard>
+                  <DoubleAnimation Storyboard.TargetProperty="Opacity" To="0.55" Duration="0:0:0.3"/>
+                </Storyboard></BeginStoryboard>
+              </Trigger.ExitActions>
+            </Trigger>
+          </Style.Triggers>
+        </Style>
+      </StackPanel.Style>
+      <Border Width="34" Height="1" Background="{StaticResource bText3}" VerticalAlignment="Center" Margin="0,0,10,0" Opacity="0.6"/>
+      <!-- wolf head: two ears, angular jaw, eye notches -->
+      <Path Width="12" Height="12" Stretch="Uniform" VerticalAlignment="Center" Margin="0,0,8,1"
+            Fill="{StaticResource bAccent}"
+            Data="F0 M0,0 L4.2,3.6 L7.8,3.6 L12,0 L11.2,7.2 L6,12 L0.8,7.2 Z M3.2,5.6 L5.2,6.6 L3.6,7.2 Z M8.8,5.6 L6.8,6.6 L8.4,7.2 Z"/>
+      <TextBlock Text="B&#x2009;L&#x2009;A&#x2009;C&#x2009;K&#x2009;W&#x2009;O&#x2009;L&#x2009;F" FontFamily="{StaticResource Display}"
+                 FontSize="10" FontWeight="SemiBold" Foreground="{StaticResource bText2}" VerticalAlignment="Center"/>
+      <Border Width="34" Height="1" Background="{StaticResource bText3}" VerticalAlignment="Center" Margin="10,0,0,0" Opacity="0.6"/>
+    </StackPanel>
+    </StackPanel>
   </Grid>
 </Window>

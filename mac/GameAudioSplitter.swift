@@ -1373,7 +1373,50 @@ struct ContentView: View {
             .keyboardShortcut(.defaultAction)
             .disabled(!model.running && !model.canStart)
             .animation(.easeOut(duration: 0.2), value: model.running)
+
+            Signature().padding(.top, 4)
         }
+    }
+}
+
+/// BlackWolf wolf-head mark, drawn on a 12x12 grid: two ears, angular jaw, eye notches (even-odd).
+struct WolfMark: Shape {
+    func path(in r: CGRect) -> Path {
+        let s = min(r.width, r.height) / 12
+        func p(_ x: CGFloat, _ y: CGFloat) -> CGPoint { CGPoint(x: r.minX + x * s, y: r.minY + y * s) }
+        var path = Path()
+        path.addLines([p(0, 0), p(4.2, 3.6), p(7.8, 3.6), p(12, 0), p(11.2, 7.2), p(6, 12), p(0.8, 7.2)])
+        path.closeSubpath()
+        path.addLines([p(3.2, 5.6), p(5.2, 6.6), p(3.6, 7.2)])
+        path.closeSubpath()
+        path.addLines([p(8.8, 5.6), p(6.8, 6.6), p(8.4, 7.2)])
+        path.closeSubpath()
+        return path
+    }
+}
+
+/// BlackWolf signature under the Start button: quiet until hovered.
+struct Signature: View {
+    @State private var hover = false
+
+    var body: some View {
+        HStack(spacing: 8) {
+            Rectangle().fill(.tertiary).frame(width: 34, height: 1)
+            WolfMark()
+                .fill(Color.accentColor, style: FillStyle(eoFill: true))
+                .frame(width: 11, height: 11)
+            Text("BLACKWOLF")
+                .font(.system(size: 10, weight: .semibold))
+                .tracking(3)
+                .foregroundStyle(.secondary)
+            Rectangle().fill(.tertiary).frame(width: 34, height: 1)
+        }
+        .opacity(hover ? 1 : 0.55)
+        .animation(.easeOut(duration: 0.2), value: hover)
+        .onHover { hover = $0 }
+        .help("Made by BlackWolf")
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel("Made by BlackWolf")
     }
 }
 

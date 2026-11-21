@@ -30,6 +30,8 @@ using Microsoft.Win32;
 [assembly: System.Runtime.Versioning.TargetFramework(".NETFramework,Version=v4.8", FrameworkDisplayName = ".NET Framework 4.8")]
 [assembly: AssemblyTitle("Game Audio Splitter")]
 [assembly: AssemblyProduct("Game Audio Splitter")]
+[assembly: AssemblyCompany("BlackWolf")]
+[assembly: AssemblyCopyright("\u00A9 2026 BlackWolf")]
 [assembly: AssemblyDescription("Plays an app's sound on extra output devices")]
 [assembly: AssemblyVersion("2.0.0.0")]
 [assembly: AssemblyFileVersion("2.0.0.0")]
