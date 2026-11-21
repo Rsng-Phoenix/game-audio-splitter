@@ -82,7 +82,8 @@ powershell -ExecutionPolicy Bypass -File windows\install.ps1
 ```
 
 This builds the app, installs it to `%LOCALAPPDATA%\Programs\GameAudioSplitter` (no admin rights needed)
-and adds **Game Audio Splitter** to the Start Menu.
+and adds **Game Audio Splitter** to the Start Menu and the Desktop. To pin it, right-click it in Start and
+choose *Pin to Start* or *Pin to taskbar*.
 
 ### macOS (command line)
 
@@ -96,7 +97,8 @@ cd game-audio-splitter/mac
 ```
 
 This builds a universal app (Apple Silicon + Intel) and installs it to `/Applications`
-(or `~/Applications` if `/Applications` is not writable). A running copy is quit first.
+(or `~/Applications` if `/Applications` is not writable), and adds it to the Dock
+(`./install.sh --no-dock` to skip that). A running copy is quit first.
 
 ### Updating
 

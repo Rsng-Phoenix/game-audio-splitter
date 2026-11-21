@@ -5,7 +5,8 @@
 .DESCRIPTION
     No administrator rights and no extra software needed: the build uses the C# compiler
     and WPF that ship with Windows (.NET Framework 4.8).
-    Installs to %LOCALAPPDATA%\Programs\GameAudioSplitter and adds a Start Menu shortcut.
+    Installs to %LOCALAPPDATA%\Programs\GameAudioSplitter and adds Start Menu and Desktop shortcuts
+    (-NoShortcut / -NoDesktop to skip them).
 
 .EXAMPLE
     powershell -ExecutionPolicy Bypass -File windows\install.ps1
@@ -15,12 +16,23 @@
 param(
     [switch]$Uninstall,
     [string]$InstallDir = (Join-Path $env:LOCALAPPDATA 'Programs\GameAudioSplitter'),
-    [switch]$NoShortcut
+    [switch]$NoShortcut,
+    [switch]$NoDesktop
 )
 
 $ErrorActionPreference = 'Stop'
 $root     = Split-Path -Parent $PSScriptRoot
 $shortcut = Join-Path ([Environment]::GetFolderPath('Programs')) 'Game Audio Splitter.lnk'
+$desktop  = Join-Path ([Environment]::GetFolderPath('Desktop'))  'Game Audio Splitter.lnk'
+
+function New-Shortcut([string]$path, [string]$exe, [string]$dir) {
+    $link = (New-Object -ComObject WScript.Shell).CreateShortcut($path)
+    $link.TargetPath       = $exe
+    $link.WorkingDirectory = $dir
+    $link.IconLocation     = "$exe,0"
+    $link.Description      = 'Play an app''s sound on extra output devices'
+    $link.Save()
+}
 
 function Write-Step([string]$text) { Write-Host "==> $text" -ForegroundColor Cyan }
 
@@ -31,6 +43,7 @@ if (Get-Process GameAudioSplitter -ErrorAction SilentlyContinue) {
 if ($Uninstall) {
     Write-Step 'Removing Game Audio Splitter'
     if (-not $NoShortcut) { Remove-Item $shortcut -ErrorAction SilentlyContinue }
+    if (-not $NoDesktop)  { Remove-Item $desktop  -ErrorAction SilentlyContinue }
     Remove-Item $InstallDir -Recurse -Force -ErrorAction SilentlyContinue
     Write-Host 'Uninstalled. Your settings remain in %APPDATA%\GameAudioSplitter (delete that folder to remove them).'
     return
@@ -47,13 +60,13 @@ $exe = Join-Path $InstallDir 'GameAudioSplitter.exe'
 
 if (-not $NoShortcut) {
     Write-Step 'Adding Start Menu shortcut'
-    $link = (New-Object -ComObject WScript.Shell).CreateShortcut($shortcut)
-    $link.TargetPath       = $exe
-    $link.WorkingDirectory = $InstallDir
-    $link.IconLocation     = "$exe,0"
-    $link.Description      = 'Play an app''s sound on extra output devices'
-    $link.Save()
+    New-Shortcut $shortcut $exe $InstallDir
+}
+if (-not $NoDesktop) {
+    Write-Step 'Adding Desktop shortcut'
+    New-Shortcut $desktop $exe $InstallDir
 }
 
 Write-Host ''
-Write-Host 'Installed. Open "Game Audio Splitter" from the Start Menu.' -ForegroundColor Green
+Write-Host 'Installed. Open "Game Audio Splitter" from the Desktop or the Start Menu.' -ForegroundColor Green
+Write-Host 'Tip: right-click it in Start and choose "Pin to Start" or "Pin to taskbar".'
