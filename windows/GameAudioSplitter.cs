@@ -31,6 +31,7 @@ using Microsoft.Win32;
 [assembly: AssemblyTitle("Game Audio Splitter")]
 [assembly: AssemblyProduct("Game Audio Splitter")]
 [assembly: AssemblyCompany("BlackWolf")]
+[assembly: AssemblyTrademark("BlackWolf\u2122")]
 [assembly: AssemblyCopyright("\u00A9 2026 BlackWolf")]
 [assembly: AssemblyDescription("Plays an app's sound on extra output devices")]
 [assembly: AssemblyVersion("2.0.0.0")]

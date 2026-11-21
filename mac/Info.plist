@@ -29,7 +29,7 @@
 	<key>NSSupportsAutomaticTermination</key>
 	<false/>
 	<key>NSHumanReadableCopyright</key>
-	<string>© 2026 BlackWolf</string>
+	<string>© 2026 BlackWolf™</string>
 	<key>NSAudioCaptureUsageDescription</key>
 	<string>Game Audio Splitter copies the sound of the app you choose to your other speakers or headphones.</string>
 </dict>

@@ -1411,7 +1411,7 @@ struct Signature: View {
             WolfMark()
                 .fill(Color.accentColor, style: FillStyle(eoFill: true))
                 .frame(width: 11, height: 11)
-            Text("BlackWolf")
+            Text("BlackWolf\u{2122}")
                 .font(.system(size: 11, weight: .semibold))
                 .tracking(1)
                 .foregroundStyle(.secondary)
