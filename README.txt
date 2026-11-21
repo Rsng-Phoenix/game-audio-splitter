@@ -38,3 +38,8 @@ BUILDING FROM SOURCE (optional)
 Windows: double-click windows\build.bat. It uses the C# compiler and WPF that
 come with Windows - no Visual Studio needed. Output in release\.
 Mac:     cd mac && ./build.sh   (needs Xcode Command Line Tools).
+
+LICENSE
+-------
+GNU GPL v3 (see LICENSE). Free to use, change and share with credit to the
+author: "Based on Game Audio Splitter by Priyanshu Pradhan (BlackWolf)".

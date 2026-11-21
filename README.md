@@ -10,6 +10,7 @@
 </p>
 
 <p align="center">
+  <img alt="License: GPL v3" src="https://img.shields.io/badge/license-GPL%20v3-blue">
   <img alt="Windows 10/11" src="https://img.shields.io/badge/Windows-10%20%7C%2011-0078D4?logo=windows&logoColor=white">
   <img alt="macOS 14.4+" src="https://img.shields.io/badge/macOS-14.4%2B-000000?logo=apple&logoColor=white">
   <img alt="Version 2.0" src="https://img.shields.io/badge/version-2.0-4CC2FF">
@@ -52,8 +53,6 @@ Performance is the main design goal. Measured on the release builds:
 
 ## Installation
 
-The repository is private: cloning needs access to it (for example `gh auth login`).
-
 ### Windows (command line)
 
 Requirements: Windows 10 (2004+) or Windows 11, 64-bit. Nothing else: the C# compiler and WPF ship with Windows.
@@ -79,7 +78,7 @@ cd game-audio-splitter/mac
 ```
 
 This builds a universal app (Apple Silicon + Intel) and installs it to `/Applications`
-(or `~/Applications` if `/Applications` is not writable).
+(or `~/Applications` if `/Applications` is not writable). A running copy is quit first.
 
 ### Updating
 
@@ -87,6 +86,9 @@ This builds a universal app (Apple Silicon + Intel) and installs it to `/Applica
 git pull
 # then run the installer again: windows\install.ps1  or  mac/install.sh
 ```
+
+On macOS, self-built copies are ad-hoc signed, so macOS may ask for the Audio Capture
+permission again after an update.
 
 ### Uninstalling
 
@@ -137,6 +139,7 @@ assets/      App icon (Windows .ico, macOS 1024 px master) and the script that d
 windows/     WPF app: GameAudioSplitter.cs, MainWindow.xaml, build.bat, install.ps1
 mac/         SwiftUI app: GameAudioSplitter.swift, Info.plist, build.sh, install.sh
 README.txt   Short guide included in the Windows zip
+LICENSE      GPL v3 with credit terms
 ```
 
 ## Troubleshooting
@@ -149,8 +152,19 @@ README.txt   Short guide included in the Windows zip
 | You hear the game twice | Don't switch on the device the game already plays on. |
 | macOS: no sound copied | System Settings → Privacy & Security → find the system-audio recording permission and enable Game Audio Splitter. |
 
+## License
+
+GNU GPL v3, see [LICENSE](LICENSE). You're free to use, study, change and share Game Audio Splitter,
+as long as you **credit the author**, keep changes open source under the same license and state what
+you changed. For example: *"Based on Game Audio Splitter by Priyanshu Pradhan (BlackWolf)"*.
+
+The **BlackWolf** name and wolf logo are trademarks and are not covered by the GPL. Modified versions
+must keep the credit, but must not present themselves as an official BlackWolf release.
+
+**Author:** Priyanshu Pradhan (BlackWolf)
+
 ---
 
 <p align="center">
-  <sub>Copyright © 2026 BlackWolf™. All rights reserved.</sub>
+  <sub>Copyright © 2026 Priyanshu Pradhan · BlackWolf™</sub>
 </p>

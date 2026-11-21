@@ -29,7 +29,7 @@ echo Building GameAudioSplitter.exe ...
 if errorlevel 1 ( echo. & echo BUILD FAILED - see errors above. & pause & exit /b 1 )
 
 echo Packing release\GameAudioSplitter-Windows.zip ...
-powershell -NoProfile -Command "Compress-Archive -Force -Path '..\release\GameAudioSplitter.exe','..\README.txt' -DestinationPath '..\release\GameAudioSplitter-Windows.zip'"
+powershell -NoProfile -Command "Compress-Archive -Force -Path '..\release\GameAudioSplitter.exe','..\README.txt','..\LICENSE' -DestinationPath '..\release\GameAudioSplitter-Windows.zip'"
 if errorlevel 1 ( echo Zip failed. & pause & exit /b 1 )
 
 echo.

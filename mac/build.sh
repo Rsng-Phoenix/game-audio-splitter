@@ -43,6 +43,7 @@ echo "==> Assembling $APP_NAME.app"
 mkdir -p "$APP/Contents/MacOS" "$APP/Contents/Resources"
 cp "$BUILD/obj/$EXE" "$APP/Contents/MacOS/$EXE"
 cp Info.plist "$APP/Contents/Info.plist"
+[[ -f ../LICENSE ]] && cp ../LICENSE "$APP/Contents/Resources/LICENSE.txt"
 printf 'APPL????' > "$APP/Contents/PkgInfo"
 
 # App icon from ../assets/AppIcon.png (1024 px). Optional: the app builds fine without it.
