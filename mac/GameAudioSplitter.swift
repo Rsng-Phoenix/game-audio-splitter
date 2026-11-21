@@ -342,8 +342,10 @@ extension CA {
 
     static func setOutput<T>(_ object: AudioObjectID, _ selector: AudioObjectPropertySelector, _ value: T) {
         var a = addr(selector, kAudioObjectPropertyScopeOutput)
-        var v = value
-        _ = AudioObjectSetPropertyData(object, &a, 0, nil, UInt32(MemoryLayout<T>.size), &v)
+        // Callers pass plain values (Float32 / UInt32); copy them as raw bytes.
+        withUnsafeBytes(of: value) { raw in
+            _ = AudioObjectSetPropertyData(object, &a, 0, nil, UInt32(raw.count), raw.baseAddress!)
+        }
     }
 
     static func controls(_ device: AudioObjectID) -> SystemControls {
