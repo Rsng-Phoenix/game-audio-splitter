@@ -226,9 +226,8 @@ namespace GameAudioSplitter
         public string Id;
         public string Name;
         public bool Active = true;
-        public string Label;   // what the UI shows (name + hints)
-        public Mix Mix;        // per-output volume / balance (shared with the UI)
-        public override string ToString() { return Label ?? Name; }
+        public Mix Mix;        // per-output state shared with the UI
+        public override string ToString() { return Name; }
     }
 
     [ComImport, Guid("7991EEC9-7E89-4D85-8390-6C703CEC60C0"), InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
