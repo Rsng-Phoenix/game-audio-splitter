@@ -41,5 +41,5 @@ Mac:     cd mac && ./build.sh   (needs Xcode Command Line Tools).
 
 LICENSE
 -------
-GNU GPL v3 (see LICENSE). Free to use, change and share with credit to the
+GNU GPL v3 (see LICENSE and NOTICE). Free to use, change and share with credit to the
 author: "Based on Game Audio Splitter by Priyanshu Pradhan (BlackWolf)".

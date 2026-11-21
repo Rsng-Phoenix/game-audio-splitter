@@ -2,6 +2,9 @@
 // Uses Core Audio process taps (macOS 14.4+): no virtual driver, and the original playback on your
 // main output is never touched (taps are created "unmuted").
 // Build: ./build.sh  (needs only the Xcode Command Line Tools)
+//
+// Copyright (C) 2026 Priyanshu Pradhan (BlackWolf). Licensed under the GNU GPL v3 with additional
+// credit and trademark terms: see LICENSE and NOTICE in the repository root.
 
 import SwiftUI
 import AppKit

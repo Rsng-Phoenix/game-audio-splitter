@@ -1,0 +1,26 @@
+Game Audio Splitter
+Copyright (C) 2026 Priyanshu Pradhan (BlackWolf)
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version. See the LICENSE file.
+
+This program is distributed with the intention that proper credit must be given
+to the original author (Priyanshu Pradhan).
+
+Additional terms under section 7 of the GNU GPL v3
+--------------------------------------------------
+
+Credit (sections 7(b) and 7(c)). Any modified version of this software must:
+- Retain this copyright notice and this NOTICE file
+- Remain open source under the same GPL v3 license
+- Clearly state the changes made from the original version
+- Credit the original in its about screen or documentation, for example:
+  "Based on Game Audio Splitter by Priyanshu Pradhan (BlackWolf)"
+
+Name and logo (section 7(e)). "BlackWolf" and the BlackWolf wolf logo are
+trademarks of Priyanshu Pradhan and are not licensed under the GPL. Unmodified
+copies may be shared as they are, including the BlackWolf signature. Modified
+versions must keep the credit above, but must not present themselves as an
+official BlackWolf release.

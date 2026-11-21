@@ -2,6 +2,9 @@
 // Audio: pure WASAPI, 32-bit float pass-through, per-output volume / balance, Windows' own resampler when rates differ.
 // UI: WPF (ships with Windows), layout in MainWindow.xaml which is embedded into the .exe.
 // Build: double-click build.bat - uses the C# compiler that comes with Windows. No SDK, no installs.
+//
+// Copyright (C) 2026 Priyanshu Pradhan (BlackWolf). Licensed under the GNU GPL v3 with additional
+// credit and trademark terms: see LICENSE and NOTICE in the repository root.
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

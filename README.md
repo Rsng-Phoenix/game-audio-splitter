@@ -157,7 +157,8 @@ assets/      App icon (Windows .ico, macOS 1024 px master) and the script that d
 windows/     WPF app: GameAudioSplitter.cs, MainWindow.xaml, build.bat, install.ps1
 mac/         SwiftUI app: GameAudioSplitter.swift, Info.plist, build.sh, install.sh
 README.txt   Short guide included in the Windows zip
-LICENSE      GPL v3 with credit terms
+LICENSE      GNU GPL v3
+NOTICE       Copyright, credit terms and BlackWolf trademark terms
 ```
 
 ## Troubleshooting
@@ -172,7 +173,7 @@ LICENSE      GPL v3 with credit terms
 
 ## License
 
-GNU GPL v3, see [LICENSE](LICENSE). You're free to use, study, change and share Game Audio Splitter,
+GNU GPL v3, see [LICENSE](LICENSE) and [NOTICE](NOTICE). You're free to use, study, change and share Game Audio Splitter,
 as long as you **credit the author**, keep changes open source under the same license and state what
 you changed. For example: *"Based on Game Audio Splitter by Priyanshu Pradhan (BlackWolf)"*.
 
