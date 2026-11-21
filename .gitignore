@@ -1,0 +1,10 @@
+# build output (share builds via GitHub Releases, not git)
+release/
+mac/build/
+*.exe
+*.zip
+*.icns
+mac/*.iconset/
+# OS / editor junk
+.DS_Store
+Thumbs.db
